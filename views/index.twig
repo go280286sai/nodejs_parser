@@ -1,0 +1,72 @@
+{% extends 'layout.twig' %}
+{% block body %}
+    <div class="container">
+        <!-- Page Header -->
+        <header class="header" id="home">
+            <div class="container">
+                <div class="infos">
+                    <h6 class="subtitle">Привет, Я</h6>
+                    <h6 class="title">Александр Сторчак</h6>
+                    <p>Full-stack программист</p>
+                    <div class="buttons pt-3">
+                        <a href="https://astorchak.blogspot.com/" target="_blank" class="btn btn-primary rounded">Мой
+                            блог</a>
+                        <button class="btn btn-dark rounded">Загрузить CV</button>
+                    </div>
+                    <div class="socials mt-4">
+                        <a class="social-item" href="https://www.facebook.com/go280286sai" target="_blank"><i
+                                    class="ti-facebook"></i></a>
+                        <a class="social-item" href="https://www.linkedin.com/in/go280286sai" target="_blank"><i
+                                    class="ti-linkedin"></i></a>
+                        <a class="social-item" href="https://github.com/go280286sai" target="_blank"><i
+                                    class="ti-github"></i></a>
+                        <a class="social-item" href="mailto:go280286sai@gmail.com"><i class="ti-email"></i></a>
+                    </div>
+                </div>
+                <div class="img-holder">
+                    <img src="assets/imgs/ava.jpeg" alt="">
+                </div>
+            </div>
+        </header>
+        <!-- End of Page Header -->
+
+        <!-- About section -->
+        <section id="research" class="section mt-3">
+            <div class="container mt-5">
+                <div class="row text-center text-md-left">
+                    <form class="form" action="/olx_url" method="post">
+                        <div class="mb-3">
+                            <label for="url" class="form-label text-danger">Добавить ссылку</label>
+                            <input class="form-control" type="text" name="url" id="url">
+                        </div>
+                        <div class="mb-3">
+                            <input onclick="add_research()" class="btn btn-success mt-3 align-content-lg-end"
+                                   type="button" value="Add">
+                        </div>
+                    </form>
+                    <input onclick="get_research()" class="btn btn-danger mt-3 align-content-lg-end" type="button"
+                           value="Получить список ресурсов">
+                    <div id="list_research">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Service section -->
+        <section id="service" class="section">
+            <div class="container text-center">
+                <h6 class="subtitle">Объявления</h6>
+                <input onclick="get_posts()" class="btn btn-danger mt-3 align-content-lg-end" type="button"
+                       value="Загрузить объявления">
+                <div id="download_posts">
+                </div>
+                <div class="container text-center">
+                    <h6 class="subtitle">Сохранить результат в формате JSON</h6>
+                    <a class="btn btn-success" href="/save">Сохранить как</a>
+                </div>
+            </div>
+        </section>
+        <!-- End of Sectoin -->
+
+    </div>
+    {#  <script src="get_research.js"></script> #}
+{% endblock %}
